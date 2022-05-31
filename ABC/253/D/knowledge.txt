@@ -1,0 +1,17 @@
+A_sum += ((ma*(ma+1))//2)*A
+だとAC
+A_sum += int((ma*(ma+1))/2)*A
+だとWAだった
+なぜ？
+
+
+ma >= 10**8 だと int(ma*(ma+1)/2) != ma*(ma+1) // 2
+
+for ma in range(10**9+1):
+    A_int = int((ma*(ma+1))/2)
+    A_sum = (ma*(ma+1))//2
+    
+    if A_int != A_sum:
+        print(ma,A_int,A_sum)
+        
+138834961 9637573267353240 9637573267353241
